@@ -1,5 +1,5 @@
 import urllib3
-import django
+# import django
 
 def getRequest(url):
     hhttp = urllib3.PoolManager()
@@ -20,7 +20,7 @@ def postRequest(url, data):
 
 
 
-# getRequest('http://localhost:8000')
+getRequest('http://localhost:80')
 # getRequest('http://localhost:8000/login')
 # getRequest('http://localhost:8000/')
 # getRequest('http://localhost:8000/login')

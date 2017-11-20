@@ -32,10 +32,10 @@ class Application(tornado.web.Application):
 
 def main():
 
-    file = open('logfile.txt','a')
-    file.write('\n--start--%s'%str(datetime.datetime.now()))
-    file.close()
-    print(os.path.join(os.path.dirname(__file__), "server.csr"))
+    # file = open('logfile.txt','a')
+    # file.write('\n--start--%s'%str(datetime.datetime.now()))
+    # file.close()
+    # print(os.path.join(os.path.dirname(__file__), "server.csr"))
 
     tornado.options.parse_command_line()
     app = tornado.web.Application(

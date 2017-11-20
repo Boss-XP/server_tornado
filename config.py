@@ -16,8 +16,8 @@ settings = {
 
 # dict()方式可以通过字典方式访问，方便
 settings = dict(
-    static_path = os.path.join(os.path.dirname(__file__), "statics"),
     template_path = os.path.join(os.path.dirname(__file__), "template"),
+    static_path = os.path.join(os.path.dirname(__file__), "statics"),
 
     cookie_secret = "skjdfljsflajsdfka",
     # xsrf_cookies = True,

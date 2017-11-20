@@ -9,7 +9,8 @@ class IndexHandler(RequestBaseHandler):
 
     def get(self, *args, **kwargs):
         # self.write("this home page")
-        return self.render("./statics/index.html")
+        return self.render("statics/index.html")
+        # return self.redirect('./statics/index.html')
 
     def post(self, *args, **kwargs):
         self.write("this home page")

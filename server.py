@@ -32,7 +32,7 @@ class Application(tornado.web.Application):
 
 def main():
 
-    file = open('logile.txt','a')
+    file = open('logfile.txt','a')
     file.write('\n--start--%s'%str(datetime.datetime.now()))
     file.close()
     print(os.path.join(os.path.dirname(__file__), "server.csr"))

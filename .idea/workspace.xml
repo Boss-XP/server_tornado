@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ae2981-0b5c-4bf0-974e-91e96c6c8732" name="Default" comment="测试文件修改">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jquery.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/web_server_tornado.iml" afterPath="$PROJECT_DIR$/.idea/web_server_tornado.iml" />
+    <list default="true" id="26ae2981-0b5c-4bf0-974e-91e96c6c8732" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/cloud_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/cloud_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/heart_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/wedding_text.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/AccountHandler.py" afterPath="$PROJECT_DIR$/handlers/AccountHandler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/initDB.sql" afterPath="$PROJECT_DIR$/initDB.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/statics/css/index.css" afterPath="$PROJECT_DIR$/template/statics/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/statics/index2.html" afterPath="$PROJECT_DIR$/template/statics/index2.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +40,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
+            <state relative-caret-position="0">
               <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
@@ -66,8 +70,8 @@
       <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="197">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,8 +80,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -294,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511234680186</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="测试文件修改">
+      <created>1511257285956</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511257285956</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -331,9 +342,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="静态页面路径调整" />
     <MESSAGE value="修改服务器端口为80" />
-    <MESSAGE value="测试文件修改" />
     <MESSAGE value="文件修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件修改" />
+    <MESSAGE value="测试文件修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试文件修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -445,6 +456,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+          <folding>
+            <element signature="e#15#33#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -553,6 +567,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#33#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -661,6 +678,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#33#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -719,12 +739,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="47" column="56" lean-forward="false" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+          <folding>
+            <element signature="e#15#33#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
+        <state relative-caret-position="0">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
@@ -822,23 +845,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/statics/images/together_1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding />
         </state>
       </provider>

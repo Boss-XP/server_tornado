@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26ae2981-0b5c-4bf0-974e-91e96c6c8732" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/cloud_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/cloud_2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/heart_white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/rose_petal4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/images/wedding_text.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/sources/Silent.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/statics/sources/huoying.mp3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/web_server_tornado.iml" afterPath="$PROJECT_DIR$/.idea/web_server_tornado.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/statics/css/index.css" afterPath="$PROJECT_DIR$/template/statics/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/statics/index2.html" afterPath="$PROJECT_DIR$/template/statics/index2.html" />
@@ -22,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/web_server_tornado$server.coverage" NAME="server Coverage Results" MODIFIED="1511234219254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/web_server_tornado$server.coverage" NAME="server Coverage Results" MODIFIED="1511275895764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -57,31 +53,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/statics/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state relative-caret-position="337">
+              <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -136,10 +122,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="372" />
-    <option name="y" value="136" />
-    <option name="width" value="1268" />
-    <option name="height" value="770" />
+    <option name="x" value="212" />
+    <option name="y" value="23" />
+    <option name="width" value="1010" />
+    <option name="height" value="707" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -156,6 +142,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,8 +178,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,6 +190,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/template/statics/sources" />
       <recent name="$PROJECT_DIR$/template/statics/images" />
       <recent name="$PROJECT_DIR$/template/statics" />
     </key>
@@ -247,6 +234,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -309,16 +299,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="372" y="136" width="1268" height="770" extended-state="0" />
+    <frame x="212" y="23" width="1010" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26998368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34710744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -351,34 +341,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handlers/PPYHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2205">
           <caret line="149" column="65" lean-forward="false" selection-start-line="149" selection-start-column="65" selection-end-line="149" selection-end-column="65" />
-          <folding>
-            <marker date="1511149765000" expanded="true" signature="1257:1437" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="1871:2044" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2165:2286" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2857:3115" ph="SELECT ppy_c... T_ppy_comment_info" />
-            <marker date="1511149765000" expanded="true" signature="4197:4235" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="4411:4484" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="4828:4866" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5042:5121" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="5468:5506" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5682:5755" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="6416:6454" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="6630:6670" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511149765000" expanded="true" signature="6849:6968" ph="INSERT INTO T_ppy_comment_info... " />
-            <marker date="1511149765000" expanded="true" signature="7056:7135" ph="UPDATE T_ppy... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -386,7 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -394,7 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -402,14 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <marker date="1511239863000" expanded="true" signature="71:1252" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="1259:2305" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="2440:3080" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="3087:4083" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4211:4847" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4856:5181" ph="CREATE TABLE... IF" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -417,14 +373,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-          <folding>
-            <marker date="1511243017000" expanded="true" signature="703:753" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="1050:1143" ph="INSERT INTO T_user_info... " />
-            <marker date="1511243017000" expanded="true" signature="1743:1787" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="4328:4371" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="6999:7047" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="7095:7139" ph="SELECT * FRO... T_user_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -482,22 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2205">
           <caret line="149" column="65" lean-forward="false" selection-start-line="149" selection-start-column="65" selection-end-line="149" selection-end-column="65" />
-          <folding>
-            <marker date="1511149765000" expanded="true" signature="1257:1437" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="1871:2044" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2165:2286" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2857:3115" ph="SELECT ppy_c... T_ppy_comment_info" />
-            <marker date="1511149765000" expanded="true" signature="4197:4235" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="4411:4484" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="4828:4866" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5042:5121" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="5468:5506" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5682:5755" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="6416:6454" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="6630:6670" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511149765000" expanded="true" signature="6849:6968" ph="INSERT INTO T_ppy_comment_info... " />
-            <marker date="1511149765000" expanded="true" signature="7056:7135" ph="UPDATE T_ppy... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -505,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -513,7 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -521,14 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <marker date="1511239863000" expanded="true" signature="71:1252" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="1259:2305" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="2440:3080" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="3087:4083" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4211:4847" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4856:5181" ph="CREATE TABLE... IF" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -536,14 +458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-          <folding>
-            <marker date="1511243017000" expanded="true" signature="703:753" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="1050:1143" ph="INSERT INTO T_user_info... " />
-            <marker date="1511243017000" expanded="true" signature="1743:1787" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="4328:4371" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="6999:7047" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="7095:7139" ph="SELECT * FRO... T_user_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -593,22 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2235">
           <caret line="149" column="65" lean-forward="false" selection-start-line="149" selection-start-column="65" selection-end-line="149" selection-end-column="65" />
-          <folding>
-            <marker date="1511149765000" expanded="true" signature="1257:1437" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="1871:2044" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2165:2286" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2857:3115" ph="SELECT ppy_c... T_ppy_comment_info" />
-            <marker date="1511149765000" expanded="true" signature="4197:4235" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="4411:4484" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="4828:4866" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5042:5121" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="5468:5506" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5682:5755" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="6416:6454" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="6630:6670" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511149765000" expanded="true" signature="6849:6968" ph="INSERT INTO T_ppy_comment_info... " />
-            <marker date="1511149765000" expanded="true" signature="7056:7135" ph="UPDATE T_ppy... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -632,14 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <marker date="1511239863000" expanded="true" signature="71:1252" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="1259:2305" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="2440:3080" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="3087:4083" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4211:4847" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4856:5181" ph="CREATE TABLE... IF" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -647,14 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-          <folding>
-            <marker date="1511243017000" expanded="true" signature="703:753" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="1050:1143" ph="INSERT INTO T_user_info... " />
-            <marker date="1511243017000" expanded="true" signature="1743:1787" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="4328:4371" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="6999:7047" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="7095:7139" ph="SELECT * FRO... T_user_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,22 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2205">
           <caret line="149" column="65" lean-forward="false" selection-start-line="149" selection-start-column="65" selection-end-line="149" selection-end-column="65" />
-          <folding>
-            <marker date="1511149765000" expanded="true" signature="1257:1437" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="1871:2044" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2165:2286" ph="INSERT INTO T_ppy_info... " />
-            <marker date="1511149765000" expanded="true" signature="2857:3115" ph="SELECT ppy_c... T_ppy_comment_info" />
-            <marker date="1511149765000" expanded="true" signature="4197:4235" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="4411:4484" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="4828:4866" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5042:5121" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="5468:5506" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="5682:5755" ph="UPDATE T_ppy... " />
-            <marker date="1511149765000" expanded="true" signature="6416:6454" ph="SELECT * FRO... T_ppy_info" />
-            <marker date="1511149765000" expanded="true" signature="6630:6670" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511149765000" expanded="true" signature="6849:6968" ph="INSERT INTO T_ppy_comment_info... " />
-            <marker date="1511149765000" expanded="true" signature="7056:7135" ph="UPDATE T_ppy... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,7 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,29 +659,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/047f1dc9-f087-4c51-b92d-80d70a9fb835/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/047f1dc9-f087-4c51-b92d-80d70a9fb835/console.sql" />
     <entry file="file://$PROJECT_DIR$/initDB.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="65" lean-forward="false" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <marker date="1511239863000" expanded="true" signature="71:1252" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="1259:2305" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="2440:3080" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="3087:4083" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4211:4847" ph="CREATE TABLE... IF" />
-            <marker date="1511239863000" expanded="true" signature="4856:5181" ph="CREATE TABLE... IF" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,14 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2640">
           <caret line="184" column="36" lean-forward="false" selection-start-line="184" selection-start-column="36" selection-end-line="184" selection-end-column="36" />
-          <folding>
-            <marker date="1511243017000" expanded="true" signature="703:753" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="1050:1143" ph="INSERT INTO T_user_info... " />
-            <marker date="1511243017000" expanded="true" signature="1743:1787" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="4328:4371" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="6999:7047" ph="SELECT * FRO... T_user_info" />
-            <marker date="1511243017000" expanded="true" signature="7095:7139" ph="SELECT * FRO... T_user_info" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,23 +685,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/template/statics/images/together_1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/together_1.jpg">
+    <entry file="file://$PROJECT_DIR$/template/statics/images/wedding_text.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        <state relative-caret-position="337">
+          <caret line="48" column="25" lean-forward="false" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
           <folding />
         </state>
       </provider>

@@ -14,21 +14,64 @@
       <!--<script src="js/bootstrap.min.js"></script>-->
     <!--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-
-        $(document).ready(function () {
-
-        })
-
-    </script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            console.log("---xpppp")
+            var bgm_audo = $(".bgm");//.get(0);
+            console.log(bgm_audo);
+            console.log("--")
+            bgm_audo = bgm_audo.get(1);
+//            console.log(bgm_audo.get(0));
+            bgm_audo.volume = 0.01;
+            bgm_audo.play();
+            console.log("------")
+            function haha() {
+                console.log("--123--")
+            }
+
+
+
+            $(".button").click(function () {
+                console.log("-----button-")
+//                bgm_audo.volume = 0.2;
+                $("#bgmm").animate({volume:0.5},3000);
+                $(".button").animate({height: "50px"},3000);
+            })
+
+        });
+//        $(document).onload(function () {
+//
+//        });
+//        function buttonClick() {
+//            console.log("--button--");
+////            $(".bgm").get().animate({left:'150px'}, 3000, haha());
+//            $(".bgm").get().animate({left: '200px'}, 4000, haha());
+//
+//        }
+    </script>
+
 </head>
 <!--<body background="./images/together_2.jpg">-->
 <body>
+    <audio src="sources/Silent.mp3" loop controls class="bgm">
+        hahah
+    </audio>
+    <audio src="sources/Silent.mp3" loop controls class="bgm"id="bgmm">
+        hahah
+    </audio>
+    <button class="button">按钮</button>
     <div class="out_body">
         <img src="./images/together_2.jpg" class="img-responsive" alt="Cinque Terre">
-        <div class="test_container">
-            <h1>djsfkjlkd</h1>
+        <div class="content_container">
+
+            <div class="wedding_text_container">
+                <img src="images/wedding_text.png" class="wedding_text_img">
+            </div>
+
+
         </div>
     </div>
     <!--<br>-->

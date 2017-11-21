@@ -28,6 +28,7 @@ class RequestBaseHandler(RequestHandler):
         pass
 
     def prepare(self):
+        print('---begin-----')
         """预解析json数据"""
         if self.request.headers.get("Content-Type", "").__contains__("application/json"):
 

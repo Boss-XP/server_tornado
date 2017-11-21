@@ -79,6 +79,7 @@ class LoginHandler(RequestBaseHandler):
                     result = copy.deepcopy(query_result)
                     del result['user_create_time']
                     del result['user_update_time']
+                    del result['user_password']
                     register_time = query_result.get("user_create_time")
                     if register_time:
                         result['user_create_time'] = str(register_time)
@@ -181,6 +182,7 @@ class GetUserInfo(RequestBaseHandler):
             del result['user_create_time']
             del result['user_update_time']
             del result['user_password']
+            del result['user_token']
             register_time = query_result.get("user_create_time")
             if register_time:
                 result['user_create_time'] = str(register_time)

@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS T_user_info(
   user_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL PRIMARY KEY COMMENT '用户id',
   user_name VARCHAR(64) NOT NULL DEFAULT "" COMMENT '用户名',
   user_password VARCHAR(128) NOT NULL DEFAULT '' COMMENT 'password',
+  user_token VARCHAR(128) NULL COMMENT 'token',
 
   user_mobile CHAR(11) NOT NULL DEFAULT '' COMMENT 'mobile phone',
   user_avatar VARCHAR(256) NULL COMMENT 'user avatar url',

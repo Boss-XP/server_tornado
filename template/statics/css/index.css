@@ -59,10 +59,10 @@ body {
 
     /*-webkit-animation:all 3s linear infinite;*/
 
-    transition:All 4s ease-in-out;
-	-webkit-transition:All 4s ease-in-out;
-	-moz-transition:All 4s ease-in-out;
-	-o-transition:All 4s ease-in-out;
+    /*transition:All 4s ease-in-out;*/
+	/*-webkit-transition:All 4s ease-in-out;*/
+	/*-moz-transition:All 4s ease-in-out;*/
+	/*-o-transition:All 4s ease-in-out;*/
 }
 
 
@@ -75,19 +75,12 @@ body {
     background-color: beige;
     text-align: center;
 }
-.rose_petal_container .rose_petal {
-    /*margin: 0 20px;*/
-    position: absolute;
-    top: -20px;
-}
 
-.addClass {
-    /*background-color: blueviolet;*/
+.float_rose_petal {
     position: absolute;
     top: -30px;
 
-
-    -webkit-animation:rotateImg 10s linear infinite;
+    -webkit-animation:rotateImg 6s linear infinite;
 }
 
 /*一直旋转*/

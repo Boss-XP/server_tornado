@@ -22,14 +22,12 @@
             //设置音频播放
             var bgm_audo = $(".bgm").get(0);
             bgm_audo.volume = 0.01;
-//            bgm_audo.play();
+            bgm_audo.play();
+
+
             $('.wedding_text_container .wedding_text_img').hide();
 //            $('.wedding_text_container .wedding_text_img').fadeIn(3000);
             $('.wedding_text_container .wedding_text_img').slideDown(2000);
-
-            $(".rose_petal_container .rose_petal").hide();
-
-//            $(".rose_petal_container .rose_petal").fadeIn(800);
 
             function addFloatRosePetal() {
 
@@ -41,12 +39,12 @@
                 var maxcount = parseInt(screenWidth / 600) > 1 ? 7 : 4;
                 var count = parseInt(Math.random() * maxcount + 1);
                 var lastLeft = 0;
-                var rose_container = $(".rose_petal_container .addTo");
+                var rose_container = $(".rose_petal_container .rose_petal_anchor");
                 for (var i = 0; i < count; i++) {
                     var index = parseInt(Math.random() * 4 + 1);
                     var indexStr = "./images/rose_petal" + (index).toString() + ".png";
                     var image = $("<img>");
-                    image.addClass("addClass");
+                    image.addClass("float_rose_petal");
 
                     var left = parseInt(Math.random() * screenWidth);
                     if (i != 0 && Math.abs(left - lastLeft) < 20) {
@@ -82,8 +80,8 @@
                         });
 //                        $(this).remove();
                     });
-//                    image.css("transform", "rotate(100deg)");
-//                    image.css("-webkit-transform", "rotate(180deg)");
+//                    image.css("transform", "rotate(980deg)");
+//                    image.css("-webkit-transform", "rotate(980deg)");
                 }
             }
             var t = setInterval(addFloatRosePetal, 600);
@@ -127,22 +125,13 @@
                 <img src="images/wedding_text.png" class="wedding_text_img">
             </div>
 
-            <audio src="sources/Silent.mp3" loop controls class="bgm">
+            <audio src="sources/Silent.mp3" loop class="bgm">
                 hahah
             </audio>
-            <button class="button" id="butt">按钮</button>
+            <!--<button class="button" id="butt">按钮</button>-->
 
             <div class="rose_petal_container">
-
-                <img src="./images/rose_petal1.png" class="rose_petal" id="rose_petal1">
-                <img src="./images/rose_petal2.png" class="rose_petal" id="rose_petal2">
-                <img src="./images/rose_petal4.png" class="rose_petal" id="rose_petal3">
-                <img src="./images/rose_petal3.png" class="rose_petal" id="rose_petal4">
-                <img src="./images/rose_petal2.png" class="rose_petal" id="rose_petal5">
-                <img src="./images/rose_petal4.png" class="rose_petal" id="rose_petal6">
-                <img src="./images/rose_petal1.png" class="rose_petal" id="rose_petal7">
-                <img src="./images/rose_petal3.png" class="rose_petal" id="rose_petal8">
-                <div class="addTo">jfkjsadlkf</div>
+                <div class="rose_petal_anchor"></div>
             </div>
         </div>
     </div>

@@ -48,10 +48,86 @@ body {
 
 .wedding_text_container {
     margin-top: 30px;
+    /*width: 408px;*/
+    height: 400px;
+    /*text-align: center;*/
 }
 
-.wedding_text_img {
-    max-width: 245px;
-    max-height: 180px;
+.wedding_text_container .wedding_text_img {
+    max-width: 408px;
+    max-height: 300px;
+
+    /*-webkit-animation:all 3s linear infinite;*/
+
+    transition:All 4s ease-in-out;
+	-webkit-transition:All 4s ease-in-out;
+	-moz-transition:All 4s ease-in-out;
+	-o-transition:All 4s ease-in-out;
 }
 
+
+/*玫瑰花瓣*/
+.rose_petal_container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: beige;
+    text-align: center;
+}
+.rose_petal_container .rose_petal {
+    /*margin: 0 20px;*/
+    position: absolute;
+    top: -20px;
+}
+
+.addClass {
+    /*background-color: blueviolet;*/
+    position: absolute;
+    top: -30px;
+
+
+    -webkit-animation:rotateImg 10s linear infinite;
+}
+
+/*一直旋转*/
+@keyframes rotateImg {
+    0% {transform : rotate(0deg);}
+    100% {transform : rotate(360deg);}
+}
+
+@-webkit-keyframes rotateImg {
+    0%{-webkit-transform : rotate(0deg);}
+    100%{-webkit-transform : rotate(360deg);}
+}
+
+/*停止旋转*/
+@keyframes stopRotateImg {
+    0% {transform : rotate(0deg);}
+    100% {transform : rotate(0deg);}
+}
+@-webkit-keyframes stopRotateImg {
+    0%{-webkit-transform : rotate(0deg);}
+    100%{-webkit-transform : rotate(0deg);}
+}
+
+
+/*屏幕响应式*/
+@media screen and (max-width: 800px) {
+    .wedding_text_container {
+        height: 300px;
+    }
+    .wedding_text_container .wedding_text_img {
+        max-width: 326.4px;
+        max-height: 240px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .wedding_text_container {
+        height: 200px;
+    }
+    .wedding_text_container .wedding_text_img {
+        max-width: 245px;
+        max-height: 180px;
+    }
+}

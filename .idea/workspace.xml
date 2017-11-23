@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26ae2981-0b5c-4bf0-974e-91e96c6c8732" name="Default" comment="端口">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/web_server_tornado.iml" afterPath="$PROJECT_DIR$/.idea/web_server_tornado.iml" />
+    <list default="true" id="26ae2981-0b5c-4bf0-974e-91e96c6c8732" name="Default" comment="调整结构使其布局到服务器上能访问">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/css/index.css" afterPath="$PROJECT_DIR$/statics/css/index.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/backgroundmusic_playing.png" afterPath="$PROJECT_DIR$/statics/images/backgroundmusic_playing.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/backgroundmusic_stoped.png" afterPath="$PROJECT_DIR$/statics/images/backgroundmusic_stoped.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/cloud_1.png" afterPath="$PROJECT_DIR$/statics/images/cloud_1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/cloud_2.png" afterPath="$PROJECT_DIR$/statics/images/cloud_2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/heart_white.png" afterPath="$PROJECT_DIR$/statics/images/heart_white.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/rose_petal1.png" afterPath="$PROJECT_DIR$/statics/images/rose_petal1.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/rose_petal2.png" afterPath="$PROJECT_DIR$/statics/images/rose_petal2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/rose_petal3.png" afterPath="$PROJECT_DIR$/statics/images/rose_petal3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/rose_petal4.png" afterPath="$PROJECT_DIR$/statics/images/rose_petal4.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/together_1.jpg" afterPath="$PROJECT_DIR$/statics/images/together_1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/together_2.jpg" afterPath="$PROJECT_DIR$/statics/images/together_2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/images/wedding_text.png" afterPath="$PROJECT_DIR$/statics/images/wedding_text.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/index2.html" afterPath="$PROJECT_DIR$/statics/index2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/template/statics/sources/huoying.mp3" afterPath="$PROJECT_DIR$/statics/sources/huoying.mp3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/IndexHandler.py" afterPath="$PROJECT_DIR$/handlers/IndexHandler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/statics/index.html" afterPath="$PROJECT_DIR$/template/statics/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +30,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/web_server_tornado$server.coverage" NAME="server Coverage Results" MODIFIED="1511410359681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/web_server_tornado$server.coverage" NAME="server Coverage Results" MODIFIED="1511415010855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -49,21 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/statics/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+            <state relative-caret-position="266">
+              <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
+        <entry file="file://$PROJECT_DIR$/statics/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="100" column="1" lean-forward="false" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+            <state relative-caret-position="171">
+              <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/handlers/IndexHandler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -82,18 +98,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/statics/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+            <state relative-caret-position="2134">
+              <caret line="155" column="7" lean-forward="false" selection-start-line="155" selection-start-column="7" selection-end-line="155" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="73" lean-forward="true" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -115,6 +141,8 @@
       <find>3D</find>
       <find>url</find>
       <find>bgm</find>
+      <find>static_url</find>
+      <find>') }}</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -123,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/url3.py" />
         <option value="$PROJECT_DIR$/logfile.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -131,8 +158,10 @@
         <option value="$PROJECT_DIR$/initDB.sql" />
         <option value="$PROJECT_DIR$/handlers/AccountHandler.py" />
         <option value="$PROJECT_DIR$/template/statics/css/index.css" />
-        <option value="$PROJECT_DIR$/handlers/IndexHandler.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/template/statics/index.html" />
         <option value="$PROJECT_DIR$/template/statics/index2.html" />
+        <option value="$PROJECT_DIR$/handlers/IndexHandler.py" />
         <option value="$PROJECT_DIR$/server.py" />
       </list>
     </option>
@@ -151,10 +180,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="227" />
-    <option name="y" value="54" />
+    <option name="x" value="380" />
+    <option name="y" value="46" />
     <option name="width" value="1337" />
-    <option name="height" value="769" />
+    <option name="height" value="898" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -188,6 +217,11 @@
             <path>
               <item name="web_server_tornado" type="b2602c69:ProjectViewProjectNode" />
               <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="web_server_tornado" type="b2602c69:ProjectViewProjectNode" />
+              <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -195,27 +229,6 @@
               <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web_server_tornado" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web_server_tornado" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web_server_tornado" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web_server_tornado" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="sources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -233,11 +246,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/template/statics/images" />
-      <recent name="$PROJECT_DIR$/template/statics/sources" />
+      <recent name="$PROJECT_DIR$/statics" />
+      <recent name="$PROJECT_DIR$/statics/images" />
       <recent name="$PROJECT_DIR$/template/statics" />
+      <recent name="$PROJECT_DIR$/template" />
+      <recent name="$PROJECT_DIR$/template/statics/images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/statics/images" />
       <recent name="$PROJECT_DIR$/template/statics/images" />
     </key>
   </component>
@@ -480,11 +496,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511410494915</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="端口">
+      <created>1511410641712</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1511410641712</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="227" y="54" width="1337" height="769" extended-state="0" />
+    <frame x="380" y="46" width="1337" height="898" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332048" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -493,7 +516,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37692308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -579,7 +602,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+    <entry file="file://$PROJECT_DIR$/statics/index2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
@@ -653,7 +676,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+    <entry file="file://$PROJECT_DIR$/statics/index2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -694,13 +717,6 @@
         <state relative-caret-position="1425">
           <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -756,12 +772,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/together_1.jpg">
+    <entry file="file://$PROJECT_DIR$/statics/images/together_1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/wedding_text.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/wedding_text.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -774,27 +790,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/cloud_1.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/cloud_1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/rose_petal2.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/rose_petal2.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/rose_petal3.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/rose_petal3.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/rose_petal4.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/rose_petal4.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/rose_petal1.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/rose_petal1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -803,10 +819,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
           <caret line="491" column="0" lean-forward="false" selection-start-line="491" selection-start-column="0" selection-end-line="491" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/images/backgroundmusic_playing.png">
+    <entry file="file://$PROJECT_DIR$/statics/images/backgroundmusic_playing.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -827,30 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="100" column="1" lean-forward="false" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/IndexHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -859,18 +852,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.py">
+    <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="120">
+          <caret line="8" column="73" lean-forward="true" selection-start-line="8" selection-start-column="73" selection-end-line="8" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/statics/index2.html">
+    <entry file="file://$PROJECT_DIR$/statics/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="117" column="5" lean-forward="false" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+        <state relative-caret-position="171">
+          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/IndexHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/statics/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2134">
+          <caret line="155" column="7" lean-forward="false" selection-start-line="155" selection-start-column="7" selection-end-line="155" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding />
         </state>
       </provider>

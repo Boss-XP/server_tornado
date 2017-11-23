@@ -44,7 +44,8 @@
                 var rose_container = $(".rose_petal_container .rose_petal_anchor");
                 for (var i = 0; i < count; i++) {
                     var index = parseInt(Math.random() * 4 + 1);
-                    var indexStr = "./images/rose_petal" + (index).toString() + ".png";
+                    var indexStr = "./images/rose_petal" + index.toString() + ".png";
+                    console.log("---str--" + indexStr);
                     var image = $("<img>");
                     image.addClass("float_rose_petal");
 

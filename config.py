@@ -5,7 +5,7 @@ import os
 # Application配置参数
 """
 settings = {
-    "static_path": os.path.join(os.path.dirname(__file__), "static"),
+    "static_path": os.path.join(os.path.dirname(__file__), "statics"),
     "template_path": os.path.join(os.path.dirname(__file__), "template"),
 
     "cookie_secret": "skjdfljsflajsdfka",

@@ -19,7 +19,7 @@ from tornado.web import RequestHandler
 import urls #url配置文件
 import config #服务器相关配置文件
 
-define("port", type=int, default=8000, help="run server on the given port")
+define("port", type=int, default=80, help="run server on the given port")
 
 
 class Application(tornado.web.Application):

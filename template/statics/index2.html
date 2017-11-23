@@ -20,7 +20,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             //设置音频播放
-            var bgm_audo = $(".bgm").get(0);
+            var bgm_audo = $(".backgroundmusic").get(0);
             bgm_audo.volume = 0.01;
             bgm_audo.play();
 
@@ -29,9 +29,11 @@
 //            $('.wedding_text_container .wedding_text_img').fadeIn(3000);
             $('.wedding_text_container .wedding_text_img').slideDown(2000);
 
+//            添加飘落的花瓣
             function addFloatRosePetal() {
 
                 var screenWidth = $(document).width();
+//                var screenHeight = $(document).height();
                 if (screenWidth > 999) { //屏幕显示最大宽度1000
                     screenWidth = 1000;
                 }
@@ -46,7 +48,7 @@
                     var image = $("<img>");
                     image.addClass("float_rose_petal");
 
-                    var left = parseInt(Math.random() * screenWidth);
+                    var left = parseInt(Math.random() * (screenWidth - 40)); //-40的原因:花瓣可能超过屏幕宽度,导致屏幕下方横着拉动的进度条会出现
                     if (i != 0 && Math.abs(left - lastLeft) < 20) {
                         left -= 60;
                     }
@@ -69,12 +71,9 @@
                     rose_container.append(image);        // 追加新元素
                     image.animate({
                         top:"800px",
-                        transform: "rotate(100deg)",
-                        "-webkit-transform": "rotate(100deg)",
-                    }, 6000, function () {
+                    }, 8000, function () {
                         $(this).animate({
                             opacity:0,
-//                            top:"600px",
                         }, 300, function () {
                             $(this).remove();
                         });
@@ -93,21 +92,23 @@
             });
 
 
-            $(".button").click(function () {
-                $(".bgm").animate({volume:0.5},3000);
-                $(".button").animate({height: "50px"},3000);
-//                $('.wedding_text_container .wedding_text_img').animate({
-//                    transform: "rotateY(180deg)",
-//                     fdvdftransform: "rotateY(130deg)",
-//                }, 2000);
+            $(".backgroundmusic_button").click(function () {
+//                $(".backgroundmusic").animate({volume:0.5},3000);
+                var bgmbutton = $(".backgroundmusic_button img");
+                if (bgmbutton.attr('src') == "./images/backgroundmusic_playing.png") {
+                    bgmbutton.attr('src', './images/backgroundmusic_stoped.png');
+                    $('.backgroundmusic').get(0).pause();
 
-                $('.wedding_text_container .wedding_text_img').css("-webkit-transform", "rotate(180deg)");
-                $('.wedding_text_container .wedding_text_img').css("transform", "rotate(180deg)");
-                $('.wedding_text_container .wedding_text_img').css("-moz-transform", "rotate(180deg)");
-                $('.wedding_text_container .wedding_text_img').css("-o-transform", "rotate(180deg)");
-                $('.wedding_text_container .wedding_text_img').css("-ms-transform", "rotate(180deg)");
-//                $('.wedding_text_container .wedding_text_img').css("-webkit-animation", "stopRotateImg 2s linear infinite");
-            })
+                    bgmbutton.css("animation", "stopRotateImg 2s linear");
+                    bgmbutton.css("-webkit-animation", "stopRotateImg 2s linear");
+
+                } else {
+                    bgmbutton.attr('src', './images/backgroundmusic_playing.png');
+                    $('.backgroundmusic').get(0).play();
+                    bgmbutton.css("animation", "rotateImg 5s linear infinite");
+                    bgmbutton.css("-webkit-animation", "rotateImg 5s linear infinite");
+                }
+            });
 
         });
 
@@ -125,11 +126,10 @@
                 <img src="images/wedding_text.png" class="wedding_text_img">
             </div>
 
-            <audio src="sources/Silent.mp3" loop class="bgm">
-                hahah
-            </audio>
-            <!--<button class="button" id="butt">按钮</button>-->
-
+            <audio src="./sources/huoying.mp3" controls loop class="backgroundmusic">没找到音乐</audio>
+            <button class="backgroundmusic_button">
+                <img src="./images/backgroundmusic_playing.png">
+            </button>
             <div class="rose_petal_container">
                 <div class="rose_petal_anchor"></div>
             </div>

@@ -9,6 +9,8 @@ import handlers.TestHandler
 
 from handlers import AccountHandler,HomeHandler,PPYHandler
 
+import handlers.StaticFileHandler
+
 urls_hander = [
     (r"^/api/account/register$",AccountHandler.RegisterHandler),
     (r"^/api/account/login$",AccountHandler.LoginHandler),
@@ -26,6 +28,10 @@ urls_hander = [
 
     (r"^/api/test$", handlers.TestHandler.TestHandler),
     (r"^/favicon.ico$",handlers.FaviconHandler.GetFavicon),
+
+    (r"^/css/(\w){1,}.css$", handlers.StaticFileHandler.CssHandler),
+    (r"^/images/(\w){1,}.png$", handlers.StaticFileHandler.ImageHandler),
+
     (r"^/*$", handlers.IndexHandler.IndexHandler),
 
 ]

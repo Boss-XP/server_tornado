@@ -7,7 +7,7 @@
 
     <!-- 引入 Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ static_url('./css/index.css') }}" type="text/css">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
     <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
     <!--<script src="https://code.jquery.com/jquery.js"></script>-->
       <!-- 包括所有已编译的插件 -->
@@ -15,32 +15,25 @@
     <!--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!--<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
-
             //设置音频播放
             var bgm_audo = $(".backgroundmusic").get(0);
             bgm_audo.volume = 0.01;
             bgm_audo.play();
-            $(".backgroundmusic").animate({volume:0.015},2000, function () {
-               $(this).play();
-               alert("music-play-begin");
-            });
 
 
             $('.wedding_text_container .wedding_text_img').hide();
+//            $('.wedding_text_container .wedding_text_img').fadeIn(3000);
             $('.wedding_text_container .wedding_text_img').slideDown(2000);
-//            alert($(document).height());
 
-
-// 添加飘落的花瓣
+//            添加飘落的花瓣
             function addFloatRosePetal() {
 
                 var screenWidth = $(document).width();
-                var screenHeight = $(document).height() - 35;
-//                alert(screenHeight);
+//                var screenHeight = $(document).height();
                 if (screenWidth > 999) { //屏幕显示最大宽度1000
                     screenWidth = 1000;
                 }
@@ -51,7 +44,8 @@
                 var rose_container = $(".rose_petal_container .rose_petal_anchor");
                 for (var i = 0; i < count; i++) {
                     var index = parseInt(Math.random() * 4 + 1);
-
+                    var indexStr = "./images/rose_petal" + index.toString() + ".png";
+                    console.log("---str--" + indexStr);
                     var image = $("<img>");
                     image.addClass("float_rose_petal");
 
@@ -60,16 +54,8 @@
                         left -= 60;
                     }
                     lastLeft = left;
-                    if (index == 1) {
-                        image.attr('src', "{{ static_url('./images/rose_petal1.png') }}");
-                    } else if (index == 1) {
-                        image.attr('src', "{{ static_url('./images/rose_petal2.png') }}");
-                    }  else if (index == 1) {
-                        image.attr('src', "{{ static_url('./images/rose_petal3.png') }}");
-                    } else {
-                        image.attr('src', "{{ static_url('./images/rose_petal4.png') }}");
-                    }
-//                    image.attr('src', indexStr);
+
+                    image.attr('src', indexStr);
 //                    image.attr({src: indexStr, left:"20px"});//left将没有效果
 //                    image.css({position:"absolute",top:"50px", left:"0px"});
                     image.css("left",left + "px");
@@ -85,8 +71,7 @@
 
                     rose_container.append(image);        // 追加新元素
                     image.animate({
-//                        top:"800px",
-                        top: screenHeight + "px",
+                        top:"800px",
                     }, 8000, function () {
                         $(this).animate({
                             opacity:0,
@@ -100,20 +85,26 @@
                 }
             }
             var t = setInterval(addFloatRosePetal, 600);
+            $(".rose_petal_container #rose_petal2").animate({
+                scale:0.5,
+                top:"500px",
+            }, 3000, function () {
+                $(".rose_petal_container #rose_petal2").fadeOut(2000);
+            });
 
 
             $(".backgroundmusic_button").click(function () {
 //                $(".backgroundmusic").animate({volume:0.5},3000);
                 var bgmbutton = $(".backgroundmusic_button img");
-                if (bgmbutton.attr('src') == "{{ static_url('./images/backgroundmusic_playing.png') }}") {
-                    bgmbutton.attr('src', "{{ static_url('./images/backgroundmusic_stoped.png') }}");
+                if (bgmbutton.attr('src') == "./images/backgroundmusic_playing.png") {
+                    bgmbutton.attr('src', './images/backgroundmusic_stoped.png');
                     $('.backgroundmusic').get(0).pause();
 
                     bgmbutton.css("animation", "stopRotateImg 2s linear");
                     bgmbutton.css("-webkit-animation", "stopRotateImg 2s linear");
 
                 } else {
-                    bgmbutton.attr('src', "{{ static_url('./images/backgroundmusic_playing.png') }}");
+                    bgmbutton.attr('src', './images/backgroundmusic_playing.png');
                     $('.backgroundmusic').get(0).play();
                     bgmbutton.css("animation", "rotateImg 5s linear infinite");
                     bgmbutton.css("-webkit-animation", "rotateImg 5s linear infinite");
@@ -121,16 +112,7 @@
             });
 
         });
-        $(document).load(function () {
-            alert("p-begin--load");
-           var bgm_audo = $(".backgroundmusic").get(0);
-            bgm_audo.volume = 0.01;
-            bgm_audo.play();
-            $(".backgroundmusic").animate({volume:0.015},2000, function () {
-               $(this).play();
-               alert("music-play-begin");
-            });
-        });
+
     </script>
 
 </head>
@@ -138,16 +120,16 @@
 <body>
 
     <div class="out_body">
-        <img src="{{ static_url('./images/together_2.jpg') }}" class="img-responsive" alt="Cinque Terre">
+        <img src="./images/together_2.jpg" class="img-responsive" alt="Cinque Terre">
         <div class="content_container">
 
             <div class="wedding_text_container">
-                <img src="{{ static_url('images/wedding_text.png') }}" class="wedding_text_img">
+                <img src="images/wedding_text.png" class="wedding_text_img">
             </div>
 
-            <audio src="{{ static_url('./sources/huoying.mp3') }}" controls loop class="backgroundmusic">没找到音乐</audio>
+            <audio src="./sources/huoying.mp3" controls loop class="backgroundmusic">没找到音乐</audio>
             <button class="backgroundmusic_button">
-                <img src="{{ static_url('./images/backgroundmusic_playing.png') }}">
+                <img src="./images/backgroundmusic_playing.png">
             </button>
             <div class="rose_petal_container">
                 <div class="rose_petal_anchor"></div>

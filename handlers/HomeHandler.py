@@ -50,8 +50,17 @@ class GetHomeData(RequestBaseHandler):
                 ppy_pic_thumb_urls = result.get('ppy_pic_thumb_urls')
                 ppy_pic_original_urls = result.get('ppy_pic_original_urls')
                 ppy_pic_sizes = result.get('ppy_pic_sizes')
+
                 if not all([ppy_pic_original_urls, ppy_pic_thumb_urls, ppy_pic_sizes]):
                     continue
+                pic_thumb_urls = json.loads(ppy_pic_thumb_urls)
+                pic_urls = json.loads(ppy_pic_original_urls)
+                pic_sizes = json.loads(ppy_pic_sizes)
+                if not all([pic_thumb_urls, pic_thumb_urls, pic_sizes]):
+                    continue
+                result['ppy_pic_thumb_urls'] = pic_thumb_urls
+                result['ppy_pic_original_urls'] = pic_urls
+                result['ppy_pic_sizes'] = pic_sizes
 
                 # ppy_pic_thumb_urls_list = ppy_pic_thumb_urls.strip(',').split(' ,')
                 # ppy_pic_original_urls_list = ppy_pic_original_urls.strip(',').split(' ,')
@@ -67,6 +76,10 @@ class GetHomeData(RequestBaseHandler):
                 ppy_video_cover_size = result.get('ppy_video_cover_size')
                 if not all([ppy_video_cover, ppy_video_path, ppy_video_cover_size]):
                     continue
+                video_cover_size = json.loads(ppy_video_cover_size)
+                if not video_cover_size:
+                    continue
+                result['ppy_video_cover_size'] = video_cover_size
             else:
                 del result['ppy_video_cover_url']
                 del result['ppy_video_url']
@@ -74,7 +87,6 @@ class GetHomeData(RequestBaseHandler):
                 del result['ppy_pic_thumb_urls']
                 del result['ppy_pic_original_urls']
                 del result['ppy_pic_sizes']
-                obj = ["dsfflaksjdflkajsdlkf"]
 
             result['ppy_publish_time'] = str(ppy_publish_time)
             res_data.append(result)

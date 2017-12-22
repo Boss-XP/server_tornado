@@ -30,13 +30,26 @@ class PublishPPYHandler(RequestBaseHandler):
             #     pic_original_urls_str += " ,"
             # print(json.dumps(ppy_pic_sizes))
 
-            #--------------如果接收到的是json类型的字符串,转为json保存
-            ppy_pic_thumb_urls = json.dumps(ppy_pic_thumb_urls)
-            ppy_pic_original_urls = json.dumps(ppy_pic_original_urls)
-            ppy_pic_sizes = json.dumps(ppy_pic_sizes)
+            #-------------------------------------------------------如果接收到的是json类型的字符串,转为json保存
+            pic_thumb_urls = json.dumps(ppy_pic_thumb_urls)
+            pic_thumb_urls = json.dumps(pic_thumb_urls)
+            pic_original_urls = json.dumps(ppy_pic_original_urls)
+            pic_original_urls = json.dumps(pic_original_urls)
+            pic_sizes = json.dumps(ppy_pic_sizes)
+            pic_sizes = json.dumps(pic_sizes)
+
+            print(json.dumps(pic_sizes))
+            print(pic_original_urls)
+            print(pic_sizes)
+            listt = ["sdfksadjfkljas"]
+            print(listt)
+            print(json.dumps(listt))
+
             sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes) \
-                    VALUE (%d, \"%s\", %d, \"%s\", \"%s\", \"%s\")"""%(user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes)
-            # --------------
+                    VALUE (%d, \"%s\", %d, %s, %s, %s)"""%(user_id, ppy_content_text, ppy_content_type, pic_thumb_urls, pic_original_urls, pic_sizes)
+            print(sql)
+            # return
+            # -----------------------------------------------------------------
 
             # 直接以字符串的方式保存
             # sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes) \
@@ -49,7 +62,8 @@ class PublishPPYHandler(RequestBaseHandler):
             if not all([ppy_video_cover_url, ppy_video_url]):
                 return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
-            ppy_video_cover_size = json.dumps(ppy_video_cover_size)
+            video_cover_size = json.dumps(ppy_video_cover_size)
+            video_cover_size = json.dumps(video_cover_size)
             sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size) \
                                 VALUE (%d, \"%s\", %d, \"%s\", \"%s\", %s)""" % (user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size)
 

@@ -82,11 +82,13 @@ CREATE TABLE IF NOT EXISTS T_ppy_info(
 
   ppy_content_type INT UNSIGNED NOT NULL DEFAULT 1 COMMENT '内容类型，1-纯文本，2-图片，3-视频',
 
-  ppy_pic_thumb_urls TEXT NULL COMMENT '图片内容的缩略图',
-  ppy_pic_original_urls TEXT NULL COMMENT '图片原始图',
+  ppy_pic_thumb_urls JSON NULL COMMENT '图片内容的缩略图json数据',
+  ppy_pic_original_urls JSON NULL COMMENT '图片原始图json数据',
+  ppy_pic_sizes JSON NULL COMMENT '图片的尺寸json数据',
 
   ppy_video_cover_url VARCHAR(256) NULL COMMENT '视频封面图地址',
   ppy_video_url VARCHAR(256) NULL COMMENT '视频地址',
+  ppy_video_cover_size JSON NULL COMMENT '视频封面图片的尺寸json数据',
 
   ppy_content_likes INT UNSIGNED DEFAULT 0 COMMENT '赞数',
   ppy_content_dislikes INT UNSIGNED DEFAULT 0 COMMENT '踩数',

@@ -3,7 +3,7 @@
 from handlers.BaseHandler import RequestBaseHandler
 from constants import Res
 from dbHandler.DBTools import DBTool
-
+import json
 
 class PublishPPYHandler(RequestBaseHandler):
     """发布数据接口"""
@@ -17,27 +17,44 @@ class PublishPPYHandler(RequestBaseHandler):
         if ppy_content_type == 2:
             ppy_pic_thumb_urls = self.json_args.get('ppy_pic_thumb_urls')
             ppy_pic_original_urls = self.json_args.get('ppy_pic_original_urls')
-            if not all([ppy_pic_thumb_urls, ppy_pic_original_urls]):
+            ppy_pic_sizes = self.json_args.get('ppy_pic_sizes')
+            if not all([ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes]):
                 return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
-            pic_thumb_urls_str = ""
-            for url in ppy_pic_thumb_urls:
-                pic_thumb_urls_str += url
-                pic_thumb_urls_str += " ,"
-            pic_original_urls_str = ""
-            for ourl in ppy_pic_original_urls:
-                pic_original_urls_str += ourl
-                pic_original_urls_str += " ,"
-            sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls) \
-                    VALUE (%d, \"%s\", %d, \"%s\", \"%s\")"""%(user_id, ppy_content_text, ppy_content_type, pic_thumb_urls_str, pic_original_urls_str)
+            # pic_thumb_urls_str = ""
+            # for url in ppy_pic_thumb_urls:
+            #     pic_thumb_urls_str += url
+            #     pic_thumb_urls_str += " ,"
+            # pic_original_urls_str = ""
+            # for ourl in ppy_pic_original_urls:
+            #     pic_original_urls_str += ourl
+            #     pic_original_urls_str += " ,"
+            # print(json.dumps(ppy_pic_sizes))
+
+            #--------------如果接收到的是json类型的字符串,转为json保存
+            ppy_pic_thumb_urls = json.dumps(ppy_pic_thumb_urls)
+            ppy_pic_original_urls = json.dumps(ppy_pic_original_urls)
+            ppy_pic_sizes = json.dumps(ppy_pic_sizes)
+            sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes) \
+                    VALUE (%d, \"%s\", %d, \"%s\", \"%s\", \"%s\")"""%(user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes)
+            # --------------
+
+            # 直接以字符串的方式保存
+            # sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes) \
+            #                     VALUE (%d, \"%s\", %d, %s, %s, %s)""" % (user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes)
 
         elif ppy_content_type == 3:
             ppy_video_cover_url = self.json_args.get('ppy_video_cover_url')
             ppy_video_url = self.json_args.get('ppy_video_url')
+            ppy_video_cover_size = self.json_args.get('ppy_video_cover_size')
             if not all([ppy_video_cover_url, ppy_video_url]):
                 return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
-            sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url) \
-                    VALUE (%d, \"%s\", %d, \"%s\", \"%s\")"""%(user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url)
+            ppy_video_cover_size = json.dumps(ppy_video_cover_size)
+            sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size) \
+                                VALUE (%d, \"%s\", %d, \"%s\", \"%s\", %s)""" % (user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size)
+
+            # sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size) \
+            #         VALUE (%d, \"%s\", %d, \"%s\", \"%s\", \"%s\")"""%(user_id, ppy_content_text, ppy_content_type, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size)
         else:
             sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type) \
                     VALUE (%d, \"%s\", %d)"""%(user_id, ppy_content_text, ppy_content_type)

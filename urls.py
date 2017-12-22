@@ -17,6 +17,7 @@ urls_hander = [
     (r"^/api/account/register$",AccountHandler.RegisterHandler),
     (r"^/api/account/login$",AccountHandler.LoginHandler),
     (r"^/api/account/get_userinfo$",AccountHandler.GetUserInfo),
+
     (r"^/api/home/get_home_data$",HomeHandler.GetHomeData),
     (r"^/api/ppy/publish_ppy$", PPYHandler.PublishPPYHandler),
     (r"^/api/ppy/get_ppy_comments$", PPYHandler.GetPPYCommentsHandler),

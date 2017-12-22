@@ -5,6 +5,7 @@ from dbHandler.DBTools import DBTool
 import datetime
 import tornado
 import tornado.gen
+import json
 
 # dbHandler.DBTools.DBTool
 mobile = "18272165102"
@@ -39,26 +40,37 @@ sq = 'UPDATE T_user_info SET '
 # update_sql = "UPDATE T_user_info SET user_avatar='%s' WHERE user_id='%s'" %(user_avatar_url, user_id)
 # DBTool.excute_sql(sq)
 
+seletSql = "SELECT * FROM T_ppy_info"
+results = DBTool.query_all(seletSql)
+# print(results)
+for r in results:
+    ptype = r['ppy_content_type']
+    if ptype == 2:
+        picss = r.get('ppy_pic_thumb_urls')
+        print(picss)
+        picss2 = json.load(picss)
+        print(type(picss2))
 
-if sq:
-    mp = "123"
-else:
-    mp = "qwe"
 
-print(mp)
-mobile = "18273165102"
-print("*"*50)
-sql = "SELECT * FROM T_user_info WHERE user_mobile=\"%s\"" % mobile
-
-result = DBTool.query_one(sql)  # 查询一个，返回字典
-if result == None:
-    print("none--")
-if result == {}:
-    print("--error")
-if not result:
-    print("not ----")
-print(result)
-print("*"*50)
+# if sq:
+#     mp = "123"
+# else:
+#     mp = "qwe"
+#
+# print(mp)
+# mobile = "18273165102"
+# print("*"*50)
+# sql = "SELECT * FROM T_user_info WHERE user_mobile=\"%s\"" % mobile
+#
+# result = DBTool.query_one(sql)  # 查询一个，返回字典
+# if result == None:
+#     print("none--")
+# if result == {}:
+#     print("--error")
+# if not result:
+#     print("not ----")
+# print(result)
+# print("*"*50)
 
 
 # query_sql = "SELECT * FROM T_user_info WHERE user_mobile = (%s)"%(mobil)

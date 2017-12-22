@@ -12,6 +12,8 @@ from handlers import AccountHandler,HomeHandler,PPYHandler
 import handlers.StaticFileHandler
 
 urls_hander = [
+
+    (r"^/api/account/get_verify_code",AccountHandler.GetVerifyCodeHandler),
     (r"^/api/account/register$",AccountHandler.RegisterHandler),
     (r"^/api/account/login$",AccountHandler.LoginHandler),
     (r"^/api/account/get_userinfo$",AccountHandler.GetUserInfo),

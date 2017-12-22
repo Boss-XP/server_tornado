@@ -132,14 +132,15 @@ class DBTool():
             cursor.execute(sql)
             # 获取所有记录列表
             results = cursor.fetchone()
-            print(type(results))
-        except:
+            # print(type(results))
+        except Exception as e:
             print("Error: unable to fetch data")
+            print(e)
             results = {}
 
         # 关闭数据库连接
         db.close()
-
+        # 查询数据为空时,返回None类型
         return results
 
     @classmethod

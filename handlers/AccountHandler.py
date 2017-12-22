@@ -10,6 +10,41 @@ import config
 import copy
 import datetime
 
+import tornado.gen
+from tornado.httpclient import AsyncHTTPClient
+import time
+import json
+import random
+from hashlib import md5
+
+class UserLoginHandler(RequestBaseHandler):
+    """用户验证码登录接口(未注册用户先注册后登录)"""
+    def post(self, *args, **kwargs):
+        mobile = self.json_args.get('mobile')
+        verifyCodde = self.json_args.get('verify_code')
+        if not all([mobile, verifyCodde]):
+            return self.write(dict(code=Res.PARAMERR, msg="参数不全", data={}))
+        # 手机正则验证
+        if not re.match(r"^1\d{10}$", mobile):
+            return self.write(dict(code=Res.PARAMERR, msg="参数错误", data={}))
+        # 6位验证码正则验证
+        if not re.match(r"^\d{6}$", verifyCodde):
+            return self.write(dict(code=Res.PARAMERR, msg="参数错误", data={}))
+
+        sql = "SELECT * FROM T_user_info WHERE user_mobil=%s" % mobile
+        result = DBTool.query_one(sql)  # 查询一个，返回字典
+
+        # 查询成功,但无数据
+        if result == None:
+            print("kjfk")
+        # result为空,排除上面的无数据的情况后,为空即为查询失败
+        if not result:
+            return self.write(dict(code=Res.SERVERERR, msg="登录失败,请稍后重试", data={}))
+
+        if result.get('user_mobile') == mobile:
+            pass
+
+
 class RegisterHandler(RequestBaseHandler):
     """注册接口"""
     def post(self, *args, **kwargs):
@@ -188,5 +223,49 @@ class GetUserInfo(RequestBaseHandler):
                 result['user_create_time'] = str(register_time)
             return self.write(dict(code=Res.OK, msg='获取成功', data=result))
 
+class GetVerifyCodeHandler(RequestBaseHandler):
+    """获取验证码接口"""
+    def post(self, *args, **kwargs):
+        mobile = self.json_args.get('user_mobile')
+        if not re.match(r"^1\d{10}$", mobile):
+            return self.write(dict(code=Res.DATAERR, msg="手机号格式错误", data={}))
+        verify_code = str("%06d"%random.randint(0,999999))
 
+        # 应该是调用验证码提供商的接口
+        md = hashlib.md5()
+        md.update(verify_code)
+
+        return self.write(dict(code=Res.OK, msd='获取验证码成功', data={"verify_code":md.hexdigest()}))
+
+class AccessToken(object):
+    """access_token管理类"""
+    _access_token = None
+    _create_time = 0
+    _expires_in = 0
+
+    @classmethod
+    @tornado.gen.coroutine
+    def update_access_token(cls):
+        client = AsyncHTTPClient()
+        url = "https://api.weixin.qq.com/cgi-bin/token?" \
+        "grant_type=client_credential&appid=%s&secret=%s" # % (WECHAT_APP_ID, WECHAT_APP_SECRET) #一部接口API
+        resp = yield client.fetch(url)
+        dict_data = json.loads(resp.body)
+        if "errcode" in dict_data:
+            raise Exception("wechat server error")
+        else:
+            cls._access_token = dict_data["access_token"]
+            cls._expires_in = dict_data["expires_in"]
+            cls._create_time = time.time()
+
+
+    @classmethod
+    @tornado.gen.coroutine
+    def get_access_token(cls):
+        if True: #过期时间判定
+            # 向微信服务器请求access_token
+            yield cls.update_access_token()
+            raise tornado.gen.Return(cls._access_token)
+        else:
+            raise tornado.gen.Return(cls._access_token)
 

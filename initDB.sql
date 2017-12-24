@@ -17,7 +17,6 @@ CREATE TABLE IF NOT EXISTS T_user_info(
   user_birthday DATETIME NULL COMMENT '用户生日',
   user_area VARCHAR(128) NULL COMMENT '用户所在地',
 
-
   user_create_time DATETIME DEFAULT current_timestamp COMMENT 'create time',
   user_update_time DATETIME DEFAULT current_timestamp COMMENT 'update time',
 

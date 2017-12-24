@@ -115,6 +115,32 @@ CREATE TABLE IF NOT EXISTS T_ppy_comment_info(
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT '首页每一则内容的评论数据表';
 
 
+CREATE TABLE IF NOT EXISTS T_ppy_like_users(
+  ppy_like_user_id BIGINT UNSIGNED NOT NULL COMMENT '用户id',
+  ppy_id BIGINT UNSIGNED NOT NULL COMMENT 'ppy id',
+
+#   下面两个外检约束保证增加或者更新数据时,ppy_id 和 user_id有值,即ppy和User要真实存在
+  CONSTRAINT FOREIGN KEY (ppy_like_user_id)REFERENCES T_user_info(user_id),
+  CONSTRAINT FOREIGN KEY (ppy_id) REFERENCES T_ppy_info(ppy_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT '首页每一则内容的点赞表';
+
+CREATE TABLE IF NOT EXISTS T_ppy_hate_users(
+  ppy_hate_user_id BIGINT UNSIGNED NOT NULL COMMENT '用户id',
+  ppy_id BIGINT UNSIGNED NOT NULL COMMENT 'ppy id',
+
+  CONSTRAINT FOREIGN KEY (ppy_hate_user_id)REFERENCES T_user_info(user_id),
+  CONSTRAINT FOREIGN KEY (ppy_id) REFERENCES T_ppy_info(ppy_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT '首页每一则内容的点赞表';
+
+CREATE TABLE IF NOT EXISTS T_ppy_share_users(
+  ppy_share_user_id BIGINT UNSIGNED NOT NULL COMMENT '用户id',
+  ppy_id BIGINT UNSIGNED NOT NULL COMMENT 'ppy id',
+
+  CONSTRAINT FOREIGN KEY (ppy_share_user_id)REFERENCES T_user_info(user_id),
+  CONSTRAINT FOREIGN KEY (ppy_id) REFERENCES T_ppy_info(ppy_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT '首页每一则内容的点赞表';
+
+
 
 #
 # CREATE TABLE IF NOT EXISTS T_book_info (

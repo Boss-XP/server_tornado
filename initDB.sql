@@ -101,16 +101,17 @@ CREATE TABLE IF NOT EXISTS T_ppy_info(
 
 
 CREATE TABLE IF NOT EXISTS T_ppy_comment_info(
-  ppy_comment_own_user_id BIGINT UNSIGNED NOT NULL COMMENT '评论用户id',
-  ppy_comment_own_ppy_id BIGINT UNSIGNED NOT NULL COMMENT '被评论的内容id',
-
   ppy_comment_id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT COMMENT '评论id',
+
+  ppy_comment_own_user_id BIGINT UNSIGNED NOT NULL COMMENT '评论用户id',
+  ppy_id BIGINT UNSIGNED NOT NULL COMMENT '被评论的内容id',
+
   ppy_comment_text VARCHAR(128) NOT NULL DEFAULT '' COMMENT '评论内容',
   ppy_comment_time DATETIME NOT NULL DEFAULT current_timestamp COMMENT '评论时间',
 
 
   CONSTRAINT FOREIGN KEY (ppy_comment_own_user_id)REFERENCES T_user_info(user_id),
-  CONSTRAINT FOREIGN KEY (ppy_comment_own_ppy_id) REFERENCES T_ppy_info(ppy_id)
+  CONSTRAINT FOREIGN KEY (ppy_id) REFERENCES T_ppy_info(ppy_id)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COMMENT '首页每一则内容的评论数据表';
 
 

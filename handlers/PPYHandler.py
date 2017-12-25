@@ -30,25 +30,16 @@ class PublishPPYHandler(RequestBaseHandler):
             #     pic_original_urls_str += " ,"
             # print(json.dumps(ppy_pic_sizes))
 
-            #-------------------------------------------------------如果接收到的是json类型的字符串,转为json保存
-            pic_thumb_urls = json.dumps(ppy_pic_thumb_urls)
+            #-------------------------------------------------------转为json保存
+            pic_thumb_urls = json.dumps(ppy_pic_thumb_urls)#不知道为什么需要转两次json数据才能保存成功
             pic_thumb_urls = json.dumps(pic_thumb_urls)
             pic_original_urls = json.dumps(ppy_pic_original_urls)
             pic_original_urls = json.dumps(pic_original_urls)
             pic_sizes = json.dumps(ppy_pic_sizes)
             pic_sizes = json.dumps(pic_sizes)
 
-            print(json.dumps(pic_sizes))
-            print(pic_original_urls)
-            print(pic_sizes)
-            listt = ["sdfksadjfkljas"]
-            print(listt)
-            print(json.dumps(listt))
-
             sql = """INSERT INTO T_ppy_info (ppy_own_user_id, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes) \
                     VALUE (%d, \"%s\", %d, %s, %s, %s)"""%(user_id, ppy_content_text, ppy_content_type, pic_thumb_urls, pic_original_urls, pic_sizes)
-            print(sql)
-            # return
             # -----------------------------------------------------------------
 
             # 直接以字符串的方式保存
@@ -89,7 +80,7 @@ class GetPPYCommentsHandler(RequestBaseHandler):
             return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
         sql = """SELECT ppy_comment_id,ppy_comment_text,ppy_comment_time, user_id,user_name, user_avatar,user_vip_level \
-         FROM T_ppy_comment_info INNER JOIN T_user_info ON ppy_comment_own_user_id=user_id WHERE ppy_comment_own_ppy_id=%d ORDER BY ppy_comment_time DESC""" % ppy_id
+         FROM T_ppy_comment_info INNER JOIN T_user_info ON ppy_comment_own_user_id=user_id WHERE ppy_id=%d ORDER BY ppy_comment_time DESC""" % ppy_id
 
 
         print(sql)
@@ -120,16 +111,23 @@ class GetPPYCommentsHandler(RequestBaseHandler):
 class LikePPYHandler(RequestBaseHandler):
     """赞--接口"""
     def post(self, *args, **kwargs):
-        # user_id = self.json_args.get('user_id')
+        user_id = self.json_args.get('user_id')
         ppy_id = self.json_args.get('ppy_id')
-
-        sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
-        ppy_result = DBTool.query_all(sql)
-        if not ppy_result:
-            return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
-
-        sql = "UPDATE T_ppy_info SET ppy_content_likes=ppy_content_likes+1 WHERE ppy_id=%d"%ppy_id
-        if DBTool.excute_sql(sql):
+        print(user_id)
+        print('-'*50)
+        if not all([user_id, ppy_id]):
+            return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
+        # sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
+        # ppy_result = DBTool.query_all(sql)
+        # if not ppy_result:
+        #     return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
+        #
+        # sql = "UPDATE T_ppy_info SET ppy_content_likes=ppy_content_likes+1 WHERE ppy_id=%d"%ppy_id
+        # if DBTool.excute_sql(sql):
+        #     return self.write(dict(code=Res.OK, msg='点赞成功', data={}))
+        inser_sql = "INSERT INTO T_ppy_like_users (ppy_id, ppy_like_user_id) VALUE(%d, %d)"%(ppy_id, user_id)
+        update_sql = "UPDATE T_ppy_info SET ppy_content_likes=ppy_content_likes+1 WHERE ppy_id=%d"%ppy_id
+        if DBTool.excute_sqls([inser_sql, update_sql]):
             return self.write(dict(code=Res.OK, msg='点赞成功', data={}))
 
         return self.write(dict(code=Res.DBERR, msg='点赞失败', data={}))
@@ -137,34 +135,51 @@ class LikePPYHandler(RequestBaseHandler):
 class HatePPYHandler(RequestBaseHandler):
     """踩--接口"""
     def post(self, *args, **kwargs):
+        # sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
+        # ppy_result = DBTool.query_all(sql)
+        # if not ppy_result:
+        #     return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
+        #
+        # sql = "UPDATE T_ppy_info SET ppy_content_hates=ppy_content_hates+1 WHERE ppy_id=%d"%ppy_id
+        # if DBTool.excute_sql(sql):
+        #     return self.write(dict(code=Res.OK, msg='踩他成功', data={}))
+        user_id = self.json_args.get('user_id')
         ppy_id = self.json_args.get('ppy_id')
+        if not all([user_id, ppy_id]):
+            return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
-        sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
-        ppy_result = DBTool.query_all(sql)
-        if not ppy_result:
-            return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
-
-        sql = "UPDATE T_ppy_info SET ppy_content_dislikes=ppy_content_dislikes+1 WHERE ppy_id=%d"%ppy_id
-        if DBTool.excute_sql(sql):
+        inser_sql = "INSERT INTO T_ppy_hate_users (ppy_id, ppy_hate_user_id) VALUE(%d, %d)" % (ppy_id, user_id)
+        update_sql = "UPDATE T_ppy_info SET ppy_content_hates=ppy_content_hates+1 WHERE ppy_id=%d" % ppy_id
+        if DBTool.excute_sqls([inser_sql, update_sql]):
             return self.write(dict(code=Res.OK, msg='踩他成功', data={}))
-
         return self.write(dict(code=Res.DBERR, msg='踩他失败', data={}))
 
 
 class SharePPYHandler(RequestBaseHandler):
     """分享--接口"""
     def post(self, *args, **kwargs):
+        # -----------------------------------只更新ppy_info中的数值
         ppy_id = self.json_args.get('ppy_id')
-
         sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
-        ppy_result = DBTool.query_all(sql)
+        ppy_result = DBTool.query_one(sql)
         if not ppy_result:
+            return self.write(dict(code=Res.DBERR, msg='ppy不存在', data={}))
+        if len(ppy_result) == 0:
             return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
 
         sql = "UPDATE T_ppy_info SET ppy_content_share=ppy_content_share+1 WHERE ppy_id=%d" % ppy_id
         if DBTool.excute_sql(sql):
-            return self.write(dict(code=Res.OK, msg='分享成功+1', data={}))
-
+            return self.write(dict(code=Res.OK, msg='分享成功', data={}))
+        # ----------------------------------在T_ppy_share_users表中插入后,更新ppy_info表数据
+        # user_id = self.json_args.get('user_id')
+        # ppy_id = self.json_args.get('ppy_id')
+        # if not all([user_id, ppy_id]):
+        #     return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
+        #
+        # inser_sql = "INSERT INTO T_ppy_share_users (ppy_id, ppy_share_user_id) VALUE(%d, %d)" % (ppy_id, user_id)
+        # update_sql = "UPDATE T_ppy_info SET ppy_content_shares=ppy_content_shares+1 WHERE ppy_id=%" % ppy_id
+        # if DBTool.excute_sqls([inser_sql, update_sql]):
+        #     return self.write(dict(code=Res.OK, msg='分享成功', data={}))
         return self.write(dict(code=Res.DBERR, msg='分享计数失败', data={}))
 
 
@@ -177,23 +192,26 @@ class CommentPPYHandler(RequestBaseHandler):
         if not all([user_id, ppy_id, comment_text]):
             return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
-        # 查询要评论的ppy和该用户是否存在，理论上不存在的时候不可能进入到评论界面调用评论接口，所以报错提示"操作失败，请重试"
-        sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
-        ppy_result = DBTool.query_all(sql)
-        if not ppy_result:
-            return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
+        # # 查询要评论的ppy和该用户是否存在，理论上不存在的时候不可能进入到评论界面调用评论接口，所以报错提示"操作失败，请重试"
+        # sql = "SELECT * FROM T_ppy_info WHERE ppy_id=%d" % ppy_id
+        # ppy_result = DBTool.query_all(sql)
+        # if not ppy_result:
+        #     return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
+        #
+        # sql = "SELECT * FROM T_user_info WHERE user_id=%d" % user_id
+        # user_result = DBTool.query_all(sql)
+        # if not user_result:
+        #     return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
 
-        sql = "SELECT * FROM T_user_info WHERE user_id=%d" % user_id
-        user_result = DBTool.query_all(sql)
-        if not user_result:
-            return self.write(dict(code=Res.DBERR, msg='操作失败，请重试', data={}))
-
-        sql = "INSERT INTO T_ppy_comment_info (ppy_comment_own_user_id,ppy_comment_own_ppy_id,ppy_comment_text) VALUE (%d, %d, \"%s\")"%(user_id, ppy_id, comment_text)
-        if DBTool.excute_sql(sql):
-            sql = "UPDATE T_ppy_info SET ppy_content_comments=ppy_content_comments+1 WHERE ppy_id=%d" % ppy_id
-            if DBTool.excute_sql(sql): #评论计数加1成功
-                pass
-
+        # sql = "INSERT INTO T_ppy_comment_info (ppy_comment_own_user_id,ppy_comment_own_ppy_id,ppy_comment_text) VALUE (%d, %d, \"%s\")"%(user_id, ppy_id, comment_text)
+        # if DBTool.excute_sql(sql):
+        #     sql = "UPDATE T_ppy_info SET ppy_content_comments=ppy_content_comments+1 WHERE ppy_id=%d" % ppy_id
+        #     if DBTool.excute_sql(sql): #评论计数加1成功
+        #         pass
+        #
+        #     return self.write(dict(code=Res.OK, msg='评论成功', data={}))
+        inser_sql = "INSERT INTO T_ppy_comment_info (ppy_comment_own_user_id,ppy_id,ppy_comment_text) VALUE (%d, %d, \"%s\")"%(user_id, ppy_id, comment_text)
+        update_sql = "UPDATE T_ppy_info SET ppy_content_comments=ppy_content_comments+1 WHERE ppy_id=%d" % ppy_id
+        if DBTool.excute_sqls([inser_sql, update_sql]):
             return self.write(dict(code=Res.OK, msg='评论成功', data={}))
-
         return self.write(dict(code=Res.DBERR, msg='评论失败', data={}))

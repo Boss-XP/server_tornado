@@ -117,6 +117,43 @@ class DBTool():
         return is_succeed
 
     @classmethod
+    def excute_sqls(DBTool, sqls):
+        if type(sqls) != list and len(sqls) == 0:
+            return False
+
+        for sql in sqls:
+            print(sql)
+
+        # 打开数据库连接
+        db = pymysql.connect(**config.mysql_options)
+
+        # 使用cursor()方法获取操作游标
+        cursor = db.cursor()
+
+        for sql in sqls:
+            try:
+                # 执行SQL语句
+                cursor.execute(sql)
+                # 提交修改
+                # db.commit()
+
+            except Exception as e:
+                # 发生错误时回滚
+                db.rollback()
+                is_succeed = False
+                logging.error(e)
+                db.close()
+                return False
+
+        # //全部sql正常执行完成
+        db.commit()
+
+        # 关闭连接
+        db.close()
+
+        return True
+
+    @classmethod
     def query_one(DBTool, sql):
         # 打开数据库连接
         db = pymysql.connect(**config.mysql_options)

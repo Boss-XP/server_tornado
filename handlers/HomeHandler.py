@@ -10,13 +10,14 @@ class GetHomeData(RequestBaseHandler):
     def post(self, *args, **kwargs):
         begin_index = self.json_args.get('begin_index')
         count = self.json_args.get('count')
+        user_id = self.json_args.get('user_id')
 
         if (not begin_index and begin_index != 0) or (not count):
             return self.write(dict(code=Res.PARAMERR, msg='参数不全', data={}))
 
         sql = """SELECT user_id, user_name, user_avatar, user_vip_level, \
             ppy_id, ppy_publish_time, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size, \
-            ppy_content_likes, ppy_content_dislikes, ppy_content_share, ppy_content_comments \
+            ppy_content_likes, ppy_content_hates, ppy_content_share, ppy_content_comments \
             FROM T_ppy_info INNER JOIN T_user_info ON ppy_own_user_id=user_id WHERE ppy_id > %d ORDER BY ppy_publish_time DESC LIMIT %d"""\
               %(begin_index, count)
         results = DBTool.query_all(sql)
@@ -88,10 +89,51 @@ class GetHomeData(RequestBaseHandler):
                 del result['ppy_pic_original_urls']
                 del result['ppy_pic_sizes']
 
+            result['ppy_is_liked'] = False
+            result['ppy_is_hated'] = False
+            # result['ppy_is_shared'] = False
+            # result['ppy_is_comment'] = False
+
             result['ppy_publish_time'] = str(ppy_publish_time)
             res_data.append(result)
 
         if not res_data:
             return self.write(dict(code=Res.DBERR, msg='获取主页数据失败', data={}))
+
+        if user_id:
+            print(user_id)
+            like_sql = "SELECT ppy_id FROM T_ppy_like_users WHERE ppy_like_user_id=%d"%user_id
+            like_ppy_id_results = DBTool.query_all(like_sql)
+
+            hate_sql = "SELECT ppy_id FROM T_ppy_hate_users WHERE ppy_hate_user_id=%d"%user_id
+            hate_ppy_id_results = DBTool.query_all(hate_sql)
+
+            if len(like_ppy_id_results) > 0 or len(hate_ppy_id_results) > 0:
+                print('----------xp----------------result---')
+                print(like_ppy_id_results)
+                print(hate_ppy_id_results)
+                for result in res_data:
+                    ppy_id = result.get('ppy_id')
+                    like_count = result.get('ppy_content_likes')
+                    hate_count = result.get('ppy_content_hates')
+                    if like_ppy_id_results.__contains__({"ppy_id":ppy_id}) and like_count > 0:
+                        result['ppy_is_liked'] = True
+                        continue
+                    if hate_ppy_id_results.__contains__({"ppy_id":ppy_id}) and hate_count > 0:
+                        result['ppy_is_hated'] = True
+            # print('----------xp----------------result---')
+            # print(res_data)
+        #
+        #     share_sql = "SELECT ppy_id FROM T_ppy_share_users WHERE user_id=%d" % user_id
+        #     share_ppy_id_results = DBTool.query_all(share_sql)
+        #
+        #     comment_sql = "SELECT ppy_id FROM T_ppy_comment_users WHERE user_id=%d" % user_id
+        #     comment_ppy_id_results = DBTool.query_all(comment_sql)
+        #     if len(like_ppy_id_results) > 0:
+        #         for result in res_data:
+        #             ppy_id = result.get('ppy_id')
+        #             if like_ppy_id_results.__contains__(ppy_id):
+        #                 result['ppy_is_liked'] = True
+
 
         return self.write(dict(code=Res.OK, msg='获取数据成功', data=res_data))

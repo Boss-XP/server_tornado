@@ -10,12 +10,22 @@ import json
 
 
 # dbHandler.DBTools.DBTool
-
-resul = {}
+# 空字典用not 判断也为空和None一样
+resul = ()
 if not resul:
     print("---")
 else:
     print("xppp")
+if type(resul) == dict:
+    print("dict")
+
+res = None
+if res == None:
+    print("==none")
+if type(res) == None:
+    print("type=None")
+else:
+    print(type(res))
 
 # 添加一个用户
 # mobile = "18272165102"
@@ -32,12 +42,12 @@ else:
 
 
 # 点赞表插入同时更新ppy_info表的like字段
-sq = "INSERT INTO T_ppy_like_users (ppy_id, ppy_like_user_id) VALUE(10, 20)"
-sql2 = "UPDATE T_ppy_info SET ppy_content_likes=ppy_content_likes+1 WHERE ppy_id>1000"
-if DBTool.excute_sqls([sq, sql2]):
-    print("操作--OK")
-else:
-    print("操作--Failed")
+# sq = "INSERT INTO T_ppy_like_users (ppy_id, ppy_like_user_id) VALUE(10, 20)"
+# sql2 = "UPDATE T_ppy_info SET ppy_content_likes=ppy_content_likes+1 WHERE ppy_id>1000"
+# if DBTool.excute_sqls([sq, sql2]):
+#     print("操作--OK")
+# else:
+#     print("操作--Failed")
 
 
 

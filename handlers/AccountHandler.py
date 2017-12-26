@@ -75,42 +75,63 @@ class LoginHandler(RequestBaseHandler):
     """账号密码登录接口"""
     def post(self, *args, **kwargs):
         mobile = self.json_args.get("mobile")
-
         login_type = self.json_args.get("login_type")
 
         if not all([mobile, login_type]):
             return self.write(dict(code=Res.LOGINERR, msg='参数不全'))
-        else:
-            print(mobile)
-            sql = "SELECT * FROM T_user_info WHERE user_mobile=%s" % mobile
-            query_result = DBTool.query_one(sql) #查询一个，返回字典
-            # if result.__len__() == 0:
-            #     self.write(dict(errcode=Res.LOGINERR, errmsg='用户不存在'))
-            if query_result:
-                if login_type == 1: #账号密码登录
-                    password = self.json_args.get("password")
+        # 查数据库表,看看用户存不存在
+        sql = "SELECT * FROM T_user_info WHERE user_mobile=%s" % mobile
+        query_result = DBTool.query_one(sql) #查询一个，返回字典
 
-                    if not password:
-                        return self.write(dict(code=Res.LOGINERR, msg='参数不全'))
-                    else:
-                        passwd = hashlib.sha256((password + config.password_has_key).encode('utf-8')).hexdigest()
-                        db_user_pwd = query_result.get("user_password")
-                        if passwd == db_user_pwd:
-                            # response_data = {}
-                            # for k,v in result.items():
-                            #     if not v:
-                            result = copy.deepcopy(query_result)
-                            del result['user_create_time']
-                            del result['user_update_time']
-                            del result['user_password']
-                            register_time = query_result.get("user_create_time")
-                            if register_time:
-                                result['user_create_time'] = str(register_time)
-                            return self.write(dict(code=Res.OK, msg='登录成功', data=result))
-                        else:
-                            return self.write(dict(code=Res.LOGINERR, msg='密码错误', data={}))
+        # 查询失败,返回登录失败请重试提示
+        if query_result == {}:
+            return self.write(dict(code=Res.SERVERERR, msg='登录失败,请稍后重试', data={}))
 
-                elif login_type == 2: #手机+验证码登录
+        # 查询数据库成功,再做其他操作
+        # 根据不同的登录方式做不同的处理
+        if login_type == 1:  # 账号密码登录
+            # 判断参数,看密码字段是否有值
+            password = self.json_args.get("password")
+            if not password:
+                return self.write(dict(code=Res.LOGINERR, msg='参数不全'))
+
+            # 上面已经排除查询数据失败的情况,如果查询结果还为空,则用户不存在
+            if not query_result:
+                return self.write(dict(code=Res.LOGINERR, msg='登录失败，用户不存在', data={}))
+
+            passwd = hashlib.sha256((password + config.password_has_key).encode('utf-8')).hexdigest()
+            db_user_pwd = query_result.get("user_password")
+            if not db_user_pwd:
+                return self.write(dict(code=Res.LOGINERR, msg='登录失败，用户未设置密码,请用验证码方式登录', data={}))
+            # 密码校验
+            if passwd == db_user_pwd:
+                # 密码校验通过,处理数据后并返回用户个人信息
+                result = copy.deepcopy(query_result)
+                del result['user_create_time']
+                del result['user_update_time']
+                del result['user_password']
+                register_time = query_result.get("user_create_time")
+                if register_time:
+                    result['user_create_time'] = str(register_time)
+                return self.write(dict(code=Res.OK, msg='登录成功', data=result))
+            else:
+                return self.write(dict(code=Res.LOGINERR, msg='密码错误', data={}))
+
+        elif login_type == 2:  # 手机+验证码登录
+            verify_code = self.json_args.get("verify_code")
+            if not verify_code:
+                return self.write(dict(code=Res.LOGINERR, msg='参数不全'))
+            if not query_result:
+                # 用户不存在,直接注册后返回用户信息
+                register_sql = "INSERT INTO T_user_info(user_name, user_mobile) VALUE (\"%s\", \"%s\")" % (
+                mobile, mobile)
+                if DBTool.excute_sql(register_sql):
+                    # 注册成功后查询此用户的信息
+                    query_result = DBTool.query_one(sql)
+                    # if query_result == None:
+                    if not query_result: #查询失败
+                        return self.write(dict(code=Res.SERVERERR, msg='登录失败,请稍后重试', data={}))
+                    # 查询成功,处理数据,返回数据
                     result = copy.deepcopy(query_result)
                     del result['user_create_time']
                     del result['user_update_time']
@@ -118,13 +139,24 @@ class LoginHandler(RequestBaseHandler):
                     register_time = query_result.get("user_create_time")
                     if register_time:
                         result['user_create_time'] = str(register_time)
-                    return self.write(dict(code=Res.OK, msg='登录成功', data=result))
+                    return self.write(dict(code=Res.OK, msg='注册-登录成功', data=result))
+                else:
+                    return self.write(dict(code=Res.SERVERERR, msg="注册失败，请稍后重试", data={}))
 
-                else: #其他方式 可能有三方登录，先不考虑
-                    return self.write(dict(code=Res.LOGINERR, msg='参数不全'))
-
+            # 用户存在,校验验证码后返回数据
             else:
-                return self.write(dict(code=Res.LOGINERR, msg='登录失败，用户不存在', data={}))
+                result = copy.deepcopy(query_result)
+                del result['user_create_time']
+                del result['user_update_time']
+                del result['user_password']
+                register_time = query_result.get("user_create_time")
+                if register_time:
+                    result['user_create_time'] = str(register_time)
+                return self.write(dict(code=Res.OK, msg='登录成功', data=result))
+
+        else:  # 其他方式 可能有三方登录，先不考虑
+            return self.write(dict(code=Res.LOGINERR, msg='该登录方式暂未开通,请选择手机登录', data={}))
+
 
 
 
@@ -226,15 +258,14 @@ class GetUserInfo(RequestBaseHandler):
 class GetVerifyCodeHandler(RequestBaseHandler):
     """获取验证码接口"""
     def post(self, *args, **kwargs):
-        mobile = self.json_args.get('user_mobile')
+        mobile = self.json_args.get('mobile')
         if not re.match(r"^1\d{10}$", mobile):
             return self.write(dict(code=Res.DATAERR, msg="手机号格式错误", data={}))
         verify_code = str("%06d"%random.randint(0,999999))
-
+        print(verify_code)
         # 应该是调用验证码提供商的接口
         md = hashlib.md5()
-        md.update(verify_code)
-
+        md.update(str(verify_code).encode("utf-8"))
         return self.write(dict(code=Res.OK, msd='获取验证码成功', data={"verify_code":md.hexdigest()}))
 
 class AccessToken(object):

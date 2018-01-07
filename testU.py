@@ -11,21 +11,21 @@ import json
 
 # dbHandler.DBTools.DBTool
 # 空字典用not 判断也为空和None一样
-resul = ()
-if not resul:
-    print("---")
-else:
-    print("xppp")
-if type(resul) == dict:
-    print("dict")
-
-res = None
-if res == None:
-    print("==none")
-if type(res) == None:
-    print("type=None")
-else:
-    print(type(res))
+# resul = ()
+# if not resul:
+#     print("---")
+# else:
+#     print("xppp")
+# if type(resul) == dict:
+#     print("dict")
+#
+# res = None
+# if res == None:
+#     print("==none")
+# if type(res) == None:
+#     print("type=None")
+# else:
+#     print(type(res))
 
 # 添加一个用户
 # mobile = "18272165102"
@@ -119,6 +119,16 @@ else:
 # kk = test.get_return(12)
 # print(kk)
 
-
+# -------------------------获取主页数据
+begin_index = 0
+count = 5
+sql = """SELECT user_id, user_name, user_avatar, user_vip_level, \
+            ppy_id, ppy_publish_time, ppy_content_text, ppy_content_type, ppy_pic_thumb_urls, ppy_pic_original_urls, ppy_pic_sizes, ppy_video_cover_url, ppy_video_url, ppy_video_cover_size, \
+            ppy_content_likes, ppy_content_dislikes, ppy_content_share, ppy_content_comments \
+            FROM T_ppy_info INNER JOIN T_user_info ON ppy_own_user_id=user_id WHERE ppy_id > %d ORDER BY ppy_publish_time DESC LIMIT %d"""\
+              %(begin_index, count)
+print(sql)
+results = DBTool.query_all(sql)
+print(results)
 
 

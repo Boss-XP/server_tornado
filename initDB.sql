@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS T_ppy_info(
   ppy_video_cover_size JSON NULL COMMENT '视频封面图片的尺寸json数据',
 
   ppy_content_likes INT UNSIGNED DEFAULT 0 COMMENT '赞数',
-  ppy_content_dislikes INT UNSIGNED DEFAULT 0 COMMENT '踩数',
+  ppy_content_hates INT UNSIGNED DEFAULT 0 COMMENT '踩数',
   ppy_content_share INT UNSIGNED DEFAULT 0 COMMENT '转数',
   ppy_content_comments INT UNSIGNED DEFAULT 0 COMMENT '评数',
 

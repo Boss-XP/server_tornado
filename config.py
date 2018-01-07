@@ -28,6 +28,7 @@ settings = dict(
 
 # 数据库配置参数
 mysql_options = dict(
+    # host = "47.95.209.246",#
     host = "127.0.0.1",
     database = "iHome",
     user = "root",
